@@ -12,4 +12,6 @@ hook_add = '''
   let g:closetag_shortcut='>'
 '''
 
-
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['markdown','mkd']
