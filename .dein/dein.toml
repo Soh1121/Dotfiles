@@ -163,3 +163,9 @@ hook_add = '''
   nmap <silent> gi <Plug>(coc-implementation)
   nmap <silent> gr <Plug>(coc-references)
 '''
+
+# undotree
+# アンドゥツリーを表示
+[[plugins]]
+repo = 'mbbill/undotree'
+

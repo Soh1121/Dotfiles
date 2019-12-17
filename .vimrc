@@ -171,6 +171,12 @@ if dein#check_install()
   call dein#install()
 endif
 
+" アンドゥの永続化
+if has("presistent_undo")
+  set undodir=~/.undodir
+  set undofile
+endif
+
 " カラースキーム(任意です)
 if (empty($TMUX))
   if (has("nvim"))
