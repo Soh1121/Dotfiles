@@ -1,0 +1,117 @@
+# scrooloose/nerdtree
+# Vim上で視認性の高いディレクトリツリーを表示
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  let NERDTreeShowHidden=1
+    nnoremap <silent><C-a> :NERDTreeFind<CR>:vertical res 30<CR>
+'''
+
+# vim-airline/vim-airline
+# グラフィカルで見た目がカッコいいステータスバーを手軽に利用
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+depends = 'vim-airline'
+hook_add = '''
+    let g:airline_theme = 'onedark'
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#buffer_idx_mode = 1
+    let g:airline#extensions#tabline#fnamemod = ':t'
+'''
+
+# nathanaelkane/vim-indent-guides
+# インデントがカラフルに
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+    let g:indent_guides_enable_on_vim_startup = 1
+    let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+    let g:indent_guides_auto_colors = 0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=237
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=240
+'''
+
+# airblade/vim-gitgutter
+# Gitの差分を行番号横のsignで分かりやすく
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+    set signcolumn=yes
+    let g:gitgutter_async = 1
+    let g:gitgutter_sign_modified = 'rw'
+    highlight GitGutterAdd ctermfg=green
+    highlight GitGutterChange ctermfg=yellow
+    highlight GitGutterDelete ctermfg=red
+    highlight GitGutterChangeDelete ctermfg=yellow
+'''
+
+# dense-analysis/ale
+# Vim上でLinterを走らせる
+[[plugins]]
+repo = 'dense-analysis/ale'
+hook_add = '''
+  let g:ale_set_highlights = 0
+  let g:ale_lint_on_enter=1
+  let g:ale_lint_on_save=1
+  let g:ale_lint_on_text_changed=0
+  let g:ale_sign_column_always=1
+  let g:ale_linters = {
+    \ 'bash': ['shellcheck'],
+    \ 'css': ['stylelint', 'prettier'],
+    \ 'dockerfile': ['hadolint'],
+    \ 'erb': ['erb'],
+    \ 'go': [],
+    \ 'graphql': ['eslint'],
+    \ 'html': ['HTMLHint'],
+    \ 'haml': ['haml-lint'],
+    \ 'javascript': ['eslint'],
+    \ 'json': ['jq'],
+    \ 'make': ['checkmake'],
+    \ 'markdown': ['prettier', 'textlint'],
+    \ 'python': ['pylint'],
+    \ 'ruby': ['rubocop', 'solargraph'],
+    \ 'rust': ['cargo', 'rustfmt'],
+    \ 'sass': ['sass-lint'],
+    \ 'scss': ['sass-lint'],
+    \ 'SQL': ['sqlint', 'sqlfmt'],
+    \ 'swift': ['swiftlint'],
+    \ 'typescript': ['eslint'],
+    \ 'vim': ['vint'],
+    \ 'yaml': ['yamllint'],
+    \ }
+  let g:ale_sign_error='E'
+  let g:ale_sign_warning='W'
+  let g:ale_echo_msg_error_str='E'
+  let g:ale_echo_msg_warning_str='W'
+  let g:ale_echo_msg_format='[%linter%] %s (%severity%)'
+  let g:ale_statusline_format=['E %d', 'W %d', '']
+  let g:ale_open_list=1
+  let g:ale_set_loclist=0
+  let g:ale_set_quickfix=0 " NOT use QuickFix
+  let g:ale_keep_list_window_open=0
+  let g:ale_javascript_prettier_use_local_config=1
+  let g:ale_go_langserver_executable = 'gopls'
+'''
+
+# tomtom/tcomment_vim
+# Vimでコメントアウト操作を手軽に
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+hook_add = '''
+    vnoremap ? :'<,'>TComment<CR>
+'''
+
+# luochen1990/rainbow
+# Vim上でカラフルな括弧を表示
+[[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = '''
+    let g:rainbow_active = 1
+'''
+
+# simeji/winresizer
+# 画面サイズの変更を簡単にする
+[[plugins]]
+repo = 'simeji/winresizer'
