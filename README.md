@@ -1,4 +1,4 @@
-# Soh's dotfiles 🐜
+# Soh's dotfiles
 
 ## Contents
 settings for   
