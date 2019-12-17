@@ -105,9 +105,9 @@ nnoremap \ :%s///g<LEFT><LEFT><LEFT>
 " 現在のバッファ削除
 nnoremap bd :bd<CR>
 " 括弧の補完
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
+inoremap {<Enter> {}<Left><S-i>
+inoremap [<Enter> []<Left><S-i>
+inoremap (<Enter> ()<Left><S-i>
 " クオーテーションの補完
 inoremap ' ''<LEFT>
 inoremap " ""<LEFT>
@@ -172,16 +172,5 @@ if dein#check_install()
   call dein#install()
 endif
 
-
-" 色の設定
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
-
-" let g:iceberg_custom_term_colors = 1
+let g:iceberg_custom_term_colors = 1
 colorscheme iceberg
