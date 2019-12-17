@@ -1,4 +1,4 @@
-"シェルを指定
+" シェルを指定
 set shell=/bin/zsh
 
 " setting
@@ -31,9 +31,6 @@ set backspace=indent,eol,start
 
 
 " 見た目系
-" 色の設定
-let g:iceberg_custom_term_colors = 1
-colorscheme iceberg
 syntax on
 " 行番号を表示
 set number
@@ -104,7 +101,7 @@ nnoremap <silent> , :bprev<CR>
 " . で次のバッファタブへ
 nnoremap <silent> . :bnext<CR>
 " \ でファイル内の文字置換
-nnoremap \ :%s/old/new/g<LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT>
+nnoremap \ :%s///g<LEFT><LEFT><LEFT>
 " 現在のバッファ削除
 nnoremap bd :bd<CR>
 " 括弧の補完
@@ -174,3 +171,17 @@ endif
 if dein#check_install()
   call dein#install()
 endif
+
+
+" 色の設定
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+" let g:iceberg_custom_term_colors = 1
+colorscheme iceberg
