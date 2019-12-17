@@ -172,5 +172,15 @@ if dein#check_install()
   call dein#install()
 endif
 
-let g:iceberg_custom_term_colors = 1
+" カラースキーム(任意です)
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+set t_Co=256
 colorscheme iceberg
