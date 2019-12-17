@@ -31,7 +31,6 @@ set backspace=indent,eol,start
 
 
 " 見た目系
-syntax on
 " 行番号を表示
 set number
 " タイトルを表示
@@ -179,8 +178,11 @@ if (empty($TMUX))
   endif
   if (has("termguicolors"))
     set termguicolors
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   endif
 endif
 
-set t_Co=256
-colorscheme iceberg
+syntax on
+colorscheme default
+
