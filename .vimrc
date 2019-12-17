@@ -103,3 +103,34 @@ nnoremap 2 $
 nnoremap <silent> , :bprev<CR>
 " . で次のバッファタブへ
 nnoremap <silent> . :bnext<CR>
+" \ でファイル内の文字置換
+nnoremap \ :%s/old/new/g<LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT>
+" 現在のバッファ削除
+nnoremap bd :bd<CR>
+" 括弧の補完
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
+" クオーテーションの補完
+inoremap ' ''<LEFT>
+inoremap " ""<LEFT>
+" InsertモードでEmacsのキーバインドを使えるようにする
+imap <C-p> <Up>
+imap <C-n> <Down>
+imap <C-b> <Left>
+imap <C-f> <Right>
+imap <C-a> <C-o>:call <SID>home()<CR>
+imap <C-e> <End>
+imap <C-d> <Del>
+imap <C-h> <BS>
+imap <C-k> <C-r>=<SID>kill()<CR>
+" visulaモードでインデント調整後に選択範囲を開放しない
+vnoremap > >gv
+vnoremap < <gv
+" 画面分割系
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap ss :<C-u>sp<CR><C-w>j
+nnoremap sv :<C-u>vs<CR><C-w>l
