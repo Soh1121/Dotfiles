@@ -1,10 +1,25 @@
+"シェルを指定
+set shell=/bin/zsh
+
 " setting
-"文字コードをUFT-8に設定
-set fenc=utf-8
+" encoding
+set encoding=utf8
+scriptencoding utf8
+set fileencoding=utf-8
+set termencoding=utf8
+set fileencodings=utf-8,ucs-boms,euc-jp,ep932
+set fileformats=unix,dos,mac
+set ambiwidth=double
+set nobomb
+set t_Co=256
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない
 set noswapfile
+" ヤンクをクリップボードへつなぐ
+set clipboard+=unnamed
+" ビープ音を消す
+set belloff=all
 " 編集中のファイルが変更されたら自動で読み直す
 set autoread
 " バッファが編集中でもその他のファイルを開けるように
@@ -22,6 +37,9 @@ colorscheme iceberg
 syntax on
 " 行番号を表示
 set number
+" タイトルを表示
+set title
+
 " 現在の行を強調表示
 set cursorline
 " 現在の行を強調表示（縦）
@@ -44,6 +62,10 @@ nnoremap k gk
 
 
 " Tab系
+" ファイルタイプの検索を有効化
+filetype plugin indent on
+" ファイルタイプに合わせたインデントを使用
+filetype indent on
 " 不可視文字を可視化(タブが「▸-」と表示される)
 set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
@@ -52,6 +74,10 @@ set expandtab
 set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
+" オートインデント
+set autoindent
+set smartindent
+autocmd FileType python setlocal sw=4 sts=4 ts=4 et
 
 
 " 検索系
@@ -67,3 +93,13 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" キーバインド系
+" 1 で行頭に移動
+nnoremap 1 ^
+" 2 で行末に移動
+nnoremap 2 $
+" , で前のバッファタブへ
+nnoremap <silent> , :bprev<CR>
+" . で次のバッファタブへ
+nnoremap <silent> . :bnext<CR>
