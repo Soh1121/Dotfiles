@@ -104,9 +104,9 @@ nnoremap \ :%s///g<LEFT><LEFT><LEFT>
 " 現在のバッファ削除
 nnoremap bd :bd<CR>
 " 括弧の補完
-inoremap {<Enter> {}<Left><S-i>
-inoremap [<Enter> []<Left><S-i>
-inoremap (<Enter> ()<Left><S-i>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
 " クオーテーションの補完
 inoremap ' ''<LEFT>
 inoremap " ""<LEFT>
