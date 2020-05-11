@@ -87,8 +87,16 @@ ln -s ~/Dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/Dotfiles/.tigrc ~/.tigrc
 
 #---------------------------------------------------#
+# add Iceberg for iTerm2                            #
+#---------------------------------------------------#
+echo 'Download iceberg for iTerm2'
+curl -O https://raw.githubusercontent.com/Arc0re/Iceberg-iTerm2/master/iceberg.itermcolors
+
+#---------------------------------------------------#
 # add .zshrc                                        #
 #---------------------------------------------------#
 echo 'Setting finished!'
 echo 'add alias to .zshrc: alias t='tmux''
 echo 'add settings for fzf to .zshrc: setting for fzf'
+
+
