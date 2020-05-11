@@ -93,6 +93,11 @@ echo 'Download iceberg for iTerm2'
 curl -O https://raw.githubusercontent.com/Arc0re/Iceberg-iTerm2/master/iceberg.itermcolors
 
 #---------------------------------------------------#
+# customize Launchpad                               #
+#---------------------------------------------------#
+defaults write com.apple.dock springboard-columns -int 10;defaults write com.apple.dock springboard-rows -int 5;defaults write com.apple.dock ResetLaunchPad -bool TRUE
+
+#---------------------------------------------------#
 # add .zshrc                                        #
 #---------------------------------------------------#
 echo 'Setting finished!'

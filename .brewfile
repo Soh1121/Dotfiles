@@ -21,6 +21,7 @@ brew "ghq"
 brew "git"
 brew "lua"
 brew "hugo"
+brew "mas"
 brew "nkf"
 brew "node"
 brew "nodebrew"
@@ -36,12 +37,18 @@ brew "vim"
 brew "zsh"
 brew "zsh-completions"
 
+cask "1password"
+cask "alfred"
 cask "android-platform-tools"
 cask "docker"
 cask "font-hackgen"
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "iterm2"
-cask "slack"
+cask "spectacle"
 cask "visual-studio-code"
 cask "xquartz"
+
+mas install 497799835 #XCode
+mas install 803453959 #Slack
+
