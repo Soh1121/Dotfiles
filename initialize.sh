@@ -18,15 +18,19 @@ brew update
 brew doctor
 echo 'complete: Install Homebrew'
 
-echo 'Installing git...'
-brew install git
+echo 'Install from .brewfile'
+ln -s ~/Dotfiles/.brewfile ~/.brewfile
+brew bundle
 
-echo 'Installing openssl...'
-brew install openssl
+# echo 'Installing git...'
+# brew install git
 
-echo 'Installing ghq...'
-brew install ghq
-git config --global ghq.root ~/src
+# echo 'Installing openssl...'
+# brew install openssl
+
+# echo 'Installing ghq...'
+# brew install ghq
+# git config --global ghq.root ~/src
 
 #---------------------------------------------------#
 # set Dein.vim                                      #
@@ -39,27 +43,27 @@ sh ./installer.sh ~/.vim/bundles
 #---------------------------------------------------#
 # set TMUX                                          #
 #---------------------------------------------------#
-echo 'Setting TMUX'
-brew install tmux
+# echo 'Setting TMUX'
+# brew install tmux
 
 #---------------------------------------------------#
 # set tig                                           #
 #---------------------------------------------------#
-echo 'Setting tig'
-brew install tig
+# echo 'Setting tig'
+# brew install tig
 
 #---------------------------------------------------#
 # set fzf                                           #
 #---------------------------------------------------#
-echo 'Setting fzf'
-brew install fzf
-brew install ripgrep
+# echo 'Setting fzf'
+# brew install fzf
+# brew install ripgrep
 
 #---------------------------------------------------#
 # set coc.nvim                                      #
 #---------------------------------------------------#
-echo 'Setting coc.nvim'
-brew install node
+# echo 'Setting coc.nvim'
+# brew install node
 
 #---------------------------------------------------#
 # Clean setting files                               #
@@ -74,6 +78,7 @@ echo 'complete: Clean setting files'
 # set Symbolic Links                                #
 #---------------------------------------------------#
 echo 'start: setup Symbolic Links'
+ln -s ~/Dotfiles/.zshrc ~/.zshrc
 ln -s ~/Dotfiles/.vim ~/.vim
 ln -s ~/Dotfiles/.viminfo ~/.viminfo
 ln -s ~/Dotfiles/.vimrc ~/.vimrc
