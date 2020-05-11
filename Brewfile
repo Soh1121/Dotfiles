@@ -49,6 +49,6 @@ cask "spectacle"
 cask "visual-studio-code"
 cask "xquartz"
 
-mas install 497799835 #XCode
-mas install 803453959 #Slack
+mas "XCode", id: 497799835
+mas "Slac", id: 803453959
 
