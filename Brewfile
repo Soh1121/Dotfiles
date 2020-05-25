@@ -50,6 +50,7 @@ cask "slack"
 cask "spectacle"
 cask "openinterminal-lite"
 cask "visual-studio-code"
+cask "xmind"
 cask "xquartz"
 
 mas "XCode", id: 497799835
