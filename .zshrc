@@ -191,3 +191,5 @@ export FZF_DEFAULT_OPTS='--height 30% --border'
 # SHELL LOGIN WITH TMUX / If not running interactively, do not do anything
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
+export LDFLAGS="-L/usr/local/opt/php@7.3/lib"
+export CPPFLAGS="-I/usr/local/opt/php@7.3/include"
