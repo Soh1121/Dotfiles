@@ -128,9 +128,12 @@ nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
+nnoremap sw <C-w>w
 nnoremap ss :<C-u>sp<CR><C-w>j
 nnoremap sv :<C-u>vs<CR><C-w>l
-
+nnoremap st :tabnew
+nnoremap sn gt
+nnoremap sp gT
 
 " plugin manager
 if &compatible
