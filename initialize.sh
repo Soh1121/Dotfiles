@@ -13,13 +13,13 @@ echo 'complete: setup os settings'
 # HomeBrew                                          #
 #---------------------------------------------------#
 echo 'start: Install HomeBrew'
-/usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update
 brew doctor
 echo 'complete: Install Homebrew'
 
-echo 'Install from .brewfile'
-ln -s ~/Dotfiles/.brewfile ~/.brewfile
+echo 'Install from Brewfile'
+ln -s ~/Dotfiles/Brewfile ~/Brewfile
 brew bundle
 
 # echo 'Installing git...'
@@ -96,6 +96,7 @@ curl -O https://raw.githubusercontent.com/Arc0re/Iceberg-iTerm2/master/iceberg.i
 # customize Launchpad                               #
 #---------------------------------------------------#
 defaults write com.apple.dock springboard-columns -int 10;defaults write com.apple.dock springboard-rows -int 5;defaults write com.apple.dock ResetLaunchPad -bool TRUE
+killall Dock
 
 #---------------------------------------------------#
 # add .zshrc                                        #
