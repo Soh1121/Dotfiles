@@ -37,7 +37,11 @@ brew bundle
 #---------------------------------------------------#
 echo 'Setting Dein.vim'
 mkdir ~/Dotfiles/.vim/bundles
+mkdir ~/Dotfiles/.vim/bundles/.cache
+mkdir ~/Dotfiles/.vim/bundles/.cache/.vimrc
+mkdir ~/Dotfiles/.vim/bundles/.cache/.vimrc/.dein
 cd ~/Dotfiles
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh ./installer.sh ~/.vim/bundles
 
 #---------------------------------------------------#
