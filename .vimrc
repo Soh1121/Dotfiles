@@ -1,3 +1,39 @@
+"dein設定
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=/Users/soichi/.vim/bundles/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/Users/soichi/.vim/bundles')
+  call dein#begin('/Users/soichi/.vim/bundles')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/soichi/.vim/bundles/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here like this:
+  "call dein#add('Shougo/neosnippet.vim')
+  "call dein#add('Shougo/neosnippet-snippets')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+"End dein Scripts-------------------------
+
 " シェルを指定
 set shell=/bin/zsh
 
@@ -138,40 +174,6 @@ nnoremap sp gT
 " plugin manager
 if &compatible
   set nocompatible
-endif
-
-" プラグインがインストールされるディレクトリ
-let s:dein_dir = expand('~/.vim/bundles')
-
-" dein.vim本体
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-  endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
-
-" tomlセット
-let s:toml_dir=expand('~/.dein/')
-let s:toml=s:toml_dir . 'dein.toml'
-let s:toml_lazy=s:toml_dir . 'dein-lazy.toml'
-
-" プラグインのロード
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-
-  call dein#load_toml(s:toml)
-  call dein#load_toml(s:toml_lazy, {'lazy': 1})
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-" インストールしていないプラグインがあればインストールを実行
-if dein#check_install()
-  call dein#install()
 endif
 
 " アンドゥの永続化
