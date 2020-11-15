@@ -130,6 +130,18 @@ alias mkdir='mkdir -p'
 
 alias t='tmux'
 
+## git系
+alias g='git'
+alias ga='git add'
+alias gd='git diff'
+alias gst='git status'
+alias gp='git push'
+alias gb='git branch'
+alias gsw='git switch'
+alias gf='git fetch'
+alias gc='git commit'
+alias gr='git rebase'
+
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
