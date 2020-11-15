@@ -142,6 +142,12 @@ alias gf='git fetch'
 alias gc='git commit'
 alias gr='git rebase'
 
+## docker-compose系
+alias dcu='docker-compose up -d'
+alias dcs='docker-compose stop'
+### webコンテナへのコマンド
+dcw () { docker-compose $1 web "${@:2}"}
+
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
