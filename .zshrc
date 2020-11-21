@@ -129,6 +129,8 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 
 alias t='tmux'
+alias tl='tmux ls'
+alias tk='tmux kill-session -t'
 
 ## git系
 alias g='git'
