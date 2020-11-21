@@ -131,6 +131,7 @@ alias mkdir='mkdir -p'
 alias t='tmux'
 alias tl='tmux ls'
 alias tk='tmux kill-session -t'
+alias tr='tmux rename -t'
 
 ## git系
 alias g='git'
