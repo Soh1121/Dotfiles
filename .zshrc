@@ -147,8 +147,8 @@ alias gc='git commit'
 alias gr='git rebase'
 
 ## docker-compose系
-alias dcu='docker-compose up -d'
-alias dcs='docker-compose stop'
+alias dcu='docker compose up -d'
+alias dcs='docker compose stop'
 ### webコンテナへのコマンド
 dcw () { docker-compose $1 web "${@:2}"}
 
