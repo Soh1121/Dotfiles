@@ -194,7 +194,8 @@ esac
 # export PATH=/usr/local/bin:/usr/bin
 
 # pyenvのバージョンを反映
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
