@@ -223,3 +223,7 @@ export CPPFLAGS="-I/usr/local/opt/php@7.4/include"
 ########################################
 # Settings for laravel
 export PATH="$PATH:/Users/soichi/.composer/vendor/bin"
+
+########################################
+# Settings for PostgreSQL
+export PATH="/usr/local/opt/libpq/bin:$PATH"
