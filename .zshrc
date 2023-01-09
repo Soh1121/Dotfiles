@@ -6,13 +6,9 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
 
-
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
-
-# emacs 風キーバインドにする
-bindkey -e
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -119,19 +115,14 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # エイリアス
 
-alias la='ls -a'
-alias ll='ls -l'
+alias la='ls -ah'
+alias ll='ls -lh'
 
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
 alias mkdir='mkdir -p'
-
-alias t='tmux'
-alias tl='tmux ls'
-alias tk='tmux kill-session -t'
-alias tr='tmux rename -t'
 
 ## git系
 alias g='git'
@@ -172,8 +163,6 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
-
-
 ########################################
 # OS 別の設定
 case ${OSTYPE} in
@@ -188,42 +177,6 @@ case ${OSTYPE} in
         ;;
 esac
 
-# vim:set ft=zsh:
-
-# vimのパス変更
-# export PATH=/usr/local/bin:/usr/bin
-
-# pyenvのバージョンを反映
-# eval "$(pyenv init -)"
-eval "$(pyenv init --path)"
-
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/soichi/Desktop/OCR/mcma-212608-be806f5dda3e.json"
-
 ########################################
-# Settings for fzf
-export PATH="$PATH:$HOME/.fzf/bin"
-export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
-export FZF_DEFAULT_OPTS='--height 30% --border'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-########################################
-# tmux
-# SHELL LOGIN WITH TMUX / If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
-
-########################################
-# Settings for php
-export LDFLAGS="-L/usr/local/opt/php@7.4/lib"
-export CPPFLAGS="-I/usr/local/opt/php@7.4/include"
-
-########################################
-# Settings for laravel
-export PATH="$PATH:/Users/soichi/.composer/vendor/bin"
-
-########################################
-# Settings for PostgreSQL
-export PATH="/usr/local/opt/libpq/bin:$PATH"
+# M1 Mac brew
+export PATH="/opt/homebrew/bin:$PATH"

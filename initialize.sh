@@ -2,6 +2,8 @@
 echo 'Hello! from initialize.sh'
 cd ~
 
+softwareupdate --install-rosetta
+
 #---------------------------------------------------#
 # OS settings                                       #
 #---------------------------------------------------#
@@ -22,16 +24,6 @@ echo 'Install from Brewfile'
 ln -s ~/Dotfiles/Brewfile ~/Brewfile
 brew bundle
 
-# echo 'Installing git...'
-# brew install git
-
-# echo 'Installing openssl...'
-# brew install openssl
-
-# echo 'Installing ghq...'
-# brew install ghq
-# git config --global ghq.root ~/src
-
 #---------------------------------------------------#
 # set Dein.vim                                      #
 #---------------------------------------------------#
@@ -41,27 +33,8 @@ mkdir ~/Dotfiles/.vim/bundles/.cache
 mkdir ~/Dotfiles/.vim/bundles/.cache/.vimrc
 mkdir ~/Dotfiles/.vim/bundles/.cache/.vimrc/.dein
 cd ~/Dotfiles
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh ~/.vim/bundles
-
-#---------------------------------------------------#
-# set TMUX                                          #
-#---------------------------------------------------#
-# echo 'Setting TMUX'
-# brew install tmux
-
-#---------------------------------------------------#
-# set tig                                           #
-#---------------------------------------------------#
-# echo 'Setting tig'
-# brew install tig
-
-#---------------------------------------------------#
-# set fzf                                           #
-#---------------------------------------------------#
-# echo 'Setting fzf'
-# brew install fzf
-# brew install ripgrep
+curl https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh > installer.sh
+sh ./installer.sh
 
 #---------------------------------------------------#
 # set coc.nvim                                      #
@@ -87,14 +60,6 @@ ln -s ~/Dotfiles/.vim ~/.vim
 ln -s ~/Dotfiles/.viminfo ~/.viminfo
 ln -s ~/Dotfiles/.vimrc ~/.vimrc
 ln -s ~/Dotfiles/.dein ~/.dein
-ln -s ~/Dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/Dotfiles/.tigrc ~/.tigrc
-
-#---------------------------------------------------#
-# add Iceberg for iTerm2                            #
-#---------------------------------------------------#
-echo 'Download iceberg for iTerm2'
-curl -O https://raw.githubusercontent.com/Arc0re/Iceberg-iTerm2/master/iceberg.itermcolors
 
 #---------------------------------------------------#
 # customize Launchpad                               #
@@ -106,7 +71,4 @@ killall Dock
 # add .zshrc                                        #
 #---------------------------------------------------#
 echo 'Setting finished!'
-echo 'add alias to .zshrc: alias t='tmux''
-echo 'add settings for fzf to .zshrc: setting for fzf'
-
 
