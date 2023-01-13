@@ -60,6 +60,7 @@ ln -s ~/Dotfiles/.vim ~/.vim
 ln -s ~/Dotfiles/.viminfo ~/.viminfo
 ln -s ~/Dotfiles/.vimrc ~/.vimrc
 ln -s ~/Dotfiles/.dein ~/.dein
+ln -fs "$HOME/Dotfiles/.config/starship.toml" "$HOME/.config/starship.toml"
 
 #---------------------------------------------------#
 # customize Launchpad                               #

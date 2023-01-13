@@ -1,0 +1,62 @@
+# Get editor completions based on the config schema
+"$schema" = "https://starship.rs/config-schema.json"
+
+add_newline=true
+
+command_timeout=1000 #ms
+
+#https://www.nerdfonts.com/cheat-sheet
+format = """
+$directory[](fg:29 bg:24)\
+$git_branch$git_status[](fg:24 bg:60)\
+$time[](fg:60 bg:none)\
+$fill [﬌](fg:239)$status$memory_usage$cmd_duration[﬋](fg:239)\
+$all"""
+
+[character]
+success_symbol="[](fg:29)"
+error_symbol="[✘](fg:124)"
+
+[cmd_duration]
+min_time=0
+show_milliseconds=true
+format="[ $duration]($style)"
+style="fg:60"
+
+[directory]
+truncation_length=7
+truncation_symbol="/"
+truncate_to_repo=false
+format="[$read_only]($read_only_style)[$path]($style)"
+style="fg:252 bg:29"
+repo_root_format="[$read_only]($read_only_style)[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)"
+repo_root_style="underline fg:252 bg:29"
+
+[fill]
+symbol="─"
+style="fg:239"
+
+[git_branch]
+format="[$symbol$branch(:$remote_branch)]($style)"
+style="underline fg:252 bg:24"
+
+[git_status]
+format="([ $all_status$ahead_behind]($style))"
+style="fg:252 bg:24"
+
+[memory_usage]
+# threshold=0
+format="$symbol[${ram}(, ${swap})]($style) "
+disabled=false
+
+[status]
+disabled=false
+symbol="✘ "
+style="fg:124"
+pipestatus=true
+
+[time]
+disabled=false
+format="[ $time]($style)"
+style="dimmed fg:252 bg:60"
+time_format="%R(%a)"

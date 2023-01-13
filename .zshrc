@@ -14,13 +14,23 @@ colors
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
+# 履歴に時間も記録
+setopt extended_history
+# 履歴の同じ古いコマンドは削除
+setopt hist_ignore_all_dups
+# historyコマンドを履歴に保存しない
+setopt hist_no_store
+# 履歴に余計な空白を記録しない
+setopt hist_reduce_blanks
+# 他のウインドウと履歴を共有
+setopt share_history
 
 # プロンプト
 # 1行表示
 # PROMPT="%~ %# "
 # 2行表示
-PROMPT="%{${fg_bold[green]}%}[%n@%m]%{${reset_color}%} %~
-%# "
+# PROMPT="%{${fg_bold[green]}%}[%n@%m]%{${reset_color}%} %~
+# %# "
 
 
 # 単語の区切り文字を指定する
@@ -53,17 +63,17 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 ########################################
 # vcs_info
-autoload -Uz vcs_info
-autoload -Uz add-zsh-hook
+# autoload -Uz vcs_info
+# autoload -Uz add-zsh-hook
 
-zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
-zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
+# zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
+# zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
 
-function _update_vcs_info_msg() {
-    LANG=en_US.UTF-8 vcs_info
-    RPROMPT="${vcs_info_msg_0_}"
-}
-add-zsh-hook precmd _update_vcs_info_msg
+# function _update_vcs_info_msg() {
+#     LANG=en_US.UTF-8 vcs_info
+#     RPROMPT="${vcs_info_msg_0_}"
+# }
+# add-zsh-hook precmd _update_vcs_info_msg
 
 
 ########################################
@@ -180,3 +190,7 @@ esac
 ########################################
 # M1 Mac brew
 export PATH="/opt/homebrew/bin:$PATH"
+
+#######################################
+# starship
+eval "$(starship init zsh)"
