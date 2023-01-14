@@ -1,37 +1,21 @@
 "dein設定
 "dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
+let $CACHE = expand('~/.cache')
+if !isdirectory($CACHE)
+  call mkdir($CACHE, 'p')
+endif
+if &runtimepath !~# '/dein.vim'
+  let s:dein_dir = fnamemodify('dein.vim', ':p')
+  if !isdirectory(s:dein_dir)
+    let s:dein_dir = $CACHE . '/dein/repos/github.com/Shougo/dein.vim'
+    if !isdirectory(s:dein_dir)
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_dir
+    endif
+  endif
+  execute 'set runtimepath^=' . substitute(
+        \ fnamemodify(s:dein_dir, ':p') , '[/\\]$', '', '')
 endif
 
-" Required:
-set runtimepath+=/Users/soichi/.vim/bundles/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('/Users/soichi/.vim/bundles')
-  call dein#begin('/Users/soichi/.vim/bundles')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('/Users/soichi/.vim/bundles/repos/github.com/Shougo/dein.vim')
-
-  " Add or remove your plugins here like this:
-  "call dein#add('Shougo/neosnippet.vim')
-  "call dein#add('Shougo/neosnippet-snippets')
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
 "End dein Scripts-------------------------
 
 " シェルを指定
