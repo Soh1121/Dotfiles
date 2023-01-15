@@ -37,12 +37,6 @@ curl https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installe
 sh ./installer.sh
 
 #---------------------------------------------------#
-# set coc.nvim                                      #
-#---------------------------------------------------#
-# echo 'Setting coc.nvim'
-# brew install node
-
-#---------------------------------------------------#
 # Clean setting files                               #
 #---------------------------------------------------#
 echo 'start: Clean setting files'
@@ -69,7 +63,8 @@ defaults write com.apple.dock springboard-columns -int 10;defaults write com.app
 killall Dock
 
 #---------------------------------------------------#
-# add .zshrc                                        #
+# anyenv init                                       #
 #---------------------------------------------------#
+anyenv install --init
 echo 'Setting finished!'
 

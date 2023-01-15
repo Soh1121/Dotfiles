@@ -5,6 +5,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/cask-fonts"
 
+brew "anyenv"
 brew "readline"
 brew "xz"
 brew "awscli"

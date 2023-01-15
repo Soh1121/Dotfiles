@@ -169,6 +169,10 @@ esac
 # M1 Mac brew
 export PATH="/opt/homebrew/bin:$PATH"
 
-#######################################
+########################################
+# anyenv
+eval "$(anyenv init -)"
+
+########################################
 # starship
 eval "$(starship init zsh)"
